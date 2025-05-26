@@ -6,7 +6,7 @@
 /*   By: mdiestre <mdiestre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 12:46:31 by mdiestre          #+#    #+#             */
-/*   Updated: 2025/05/22 13:44:46 by mdiestre         ###   ########.fr       */
+/*   Updated: 2025/05/23 14:09:28 by mdiestre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,10 +103,14 @@ char	*ft_strjoin(char *s1, char *s2)
 	i = 0;
 	j = 0;
 	while (s1 && s1[i])
-		result[i++] = s1[i];
+	{
+		result[i] = s1[i];
+		i++;
+	}
 	while (s2 && s2[j])
 		result[i++] = s2[j++];
 	result[i] = '\0';
-	free(s1);
+	if(s1)
+		free(s1);
 	return (result);
 }
